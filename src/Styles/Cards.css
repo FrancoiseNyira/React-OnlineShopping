@@ -1,0 +1,50 @@
+section {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.cards {
+    width: 250px;
+    padding: 20px;
+    background-color: hsl(120, 87%, 75%);
+    margin-top: 8px;
+}
+
+.cards:hover {
+    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.image_box img {
+    width: 150px;
+    height: 200px;
+    border-radius: 2px;
+}
+
+.details p:nth-child(1) {
+    font-weight: bold;
+    color: darkolivegreen;
+}
+
+.details p:nth-child(2) {
+    color: rgb(100, 92, 92);
+    font-size: 0.8rem;
+}
+
+.details p:nth-child(3) {
+    color: rgb(53, 33, 33);
+    font-weight: bold;
+}
+
+.details button {
+    padding: 5px 10px;
+    border: none;
+    font-weight: bold;
+    background-color: hsl(120, 20%, 50%);
+    outline: none;
+    border-radius: 2px;
+}
