@@ -10,7 +10,7 @@ section {
 .cards {
     width: 250px;
     padding: 20px;
-    background-color: hsl(120, 87%, 75%);
+    background-color: white;
     margin-top: 8px;
 }
 
