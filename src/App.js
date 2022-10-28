@@ -31,7 +31,6 @@ import Footer from './components/Footer';
 
 const handleChange = (item, d) =>{
   let ind = -1;
-  alert("Item");
   cart.forEach((data, index)=>{
     if (data.id === item.id)
       ind = index;
