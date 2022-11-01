@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 import './App.css';
-import NavBar from './components/NavBar'
 import Amazon from './components/Amazon'
 import Cart from './components/Cart'
 import './Styles/Amazon.css'
 import Footer from './components/Footer';
+// import XXX from "./components/XXX";
+// import './Styles/XXX.css'
+import { Routes, Route, } from 'react-router-dom'
+import Home from "./Pages/Home";
+import AddProduct from "./Pages/AddProduct";
+import NavBar from "./components/NavBar"
 
  function App() {
+
+  const [items, setItems] = useState([]);
 
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
   const [warning, setWarning] = useState(false);
+
+
 
   const handleClick = (item) => {
     let isPresent = false;
@@ -43,19 +52,39 @@ const handleChange = (item, d) =>{
   setCart([...tempArr])
 }
 
-  return (
+  return(
     <React.Fragment>
-      <NavBar size={cart.length} setShow={setShow}/>
-      {
-        show ? <Amazon handleClick={handleClick}/> : <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>
-      }
+       <NavBar size={cart.length} setShow={setShow} />
+      
+   
+  
            
       {
         warning && <div className='warning'>This item is already added to your cart!</div>
-      }
-      <Footer/>
-    </React.Fragment>
-  )
-}
+      } 
+ 
+     <div className="container mt-5">
+     <Routes>
+       <Route  exact path='/' element={<Home items={items} handleClick={handleClick}/>} />
+       <Route exact path='/AddProduct' element={<AddProduct setItems={setItems} items={items}  />} />
+       <Route  exact path='/Cart' element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/> } />
+     </Routes>
+   </div>
+   {/* <Amazon /> */}
+     {/* <Cart />  */}
+     {/* <Footer/>    */}
+
+   </React.Fragment>                      
+  )};
 
 export default App;
+
+
+
+
+
+
+
+
+
+
