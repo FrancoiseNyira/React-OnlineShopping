@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-import Amazon from './components/Amazon'
+// import Amazon from './components/Amazon'
 import Cart from './components/Cart'
 import './Styles/Amazon.css'
 import Footer from './components/Footer';
@@ -55,10 +55,7 @@ const handleChange = (item, d) =>{
   return(
     <React.Fragment>
        <NavBar size={cart.length} setShow={setShow} />
-      
-   
-  
-           
+                  
       {
         warning && <div className='warning'>This item is already added to your cart!</div>
       } 
@@ -67,12 +64,12 @@ const handleChange = (item, d) =>{
      <Routes>
        <Route  exact path='/' element={<Home items={items} handleClick={handleClick}/>} />
        <Route exact path='/AddProduct' element={<AddProduct setItems={setItems} items={items}  />} />
-       <Route  exact path='/Cart' element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/> } />
+       <Route  exact path='/Cart' element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>} />
      </Routes>
    </div>
    {/* <Amazon /> */}
      {/* <Cart />  */}
-     {/* <Footer/>    */}
+     <Footer/>   
 
    </React.Fragment>                      
   )};

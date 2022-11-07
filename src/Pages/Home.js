@@ -5,13 +5,13 @@ const Home = ({items, handleClick}) => {
   return (
     <>
     <Amazon handleClick={handleClick}/>
-    <div className="row">
+    {/* <div className="row">
     <div className="col col-6">
       <ul className="list-group">
         {
           items.map(function (item, index) {
             return (<li key={index} className="list-group-item">
-              <div>{item.name}</div>
+              <div>{item.}</div>
               <div>{item.price}</div>
             </li>)
           })
@@ -21,7 +21,7 @@ const Home = ({items, handleClick}) => {
     </div>
     <div>
     </div>
-  </div>
+  </div> */}
   </>
   )
 }
